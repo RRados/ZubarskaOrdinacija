@@ -20,24 +20,14 @@ namespace ZubarskaOrdinacija.Model
         private SqlDataAdapter adapter;
 
 
-        public PodaciBaza(Lekar lekari, Pacijent pacijenti, Usluge usluge, Zakazivanje zakazivanje, IzvrsenPregled izvrseniPregledi, Grad gradovi)
-        {
-            this.lekari = lekari;
-            this.pacijenti = pacijenti;
-            this.usluge = usluge;
-            this.zakazivanje = zakazivanje;
-            this.izvrseniPregledi = izvrseniPregledi;
-            this.gradovi = gradovi;
-        }
-
         public PodaciBaza()
         {
-            this.lekari = null;
-            this.pacijenti = null;
-            this.usluge = null;
-            this.zakazivanje = null;
-            this.izvrseniPregledi = null;
-            this.gradovi = null;
+            this.lekari = new Lekar();
+            this.pacijenti = new Pacijent();
+            this.usluge = new Usluge();
+            this.zakazivanje = new Zakazivanje();
+            this.izvrseniPregledi = new IzvrsenPregled();
+            this.gradovi = new Grad();
         }
 
 
@@ -51,14 +41,12 @@ namespace ZubarskaOrdinacija.Model
             {
                 connection.Open();
 
-
                 using (adapter = new SqlDataAdapter(upit, connection))
                 {
                     adapter.Fill(dataSet);
 
                     return dataSet.Tables[0];
                 }
-
             }
         }
 
