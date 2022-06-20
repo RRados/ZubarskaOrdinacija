@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace ZubarskaOrdinacija.Model
 {
-    class Pacijent
+    class Osoba
     {
-        private int id_pacijent;
+        private int id_osoba;
         private string ime;
         private string prezime;
         private string email;
         private int telefon;
-        private Grad grad;
+        private string grad;
 
 
-        public int ID_Pacijent
+
+        public int ID_Osoba
         {
-            get { return id_pacijent; }
-            set { id_pacijent = value; }
+            get { return id_osoba; }
+            set { id_osoba = value; }
         }
         public string Ime
         {
@@ -41,18 +42,15 @@ namespace ZubarskaOrdinacija.Model
             get { return telefon; }
             set { telefon = value; }
         }
-        public Grad Grad
+        public string Grad
         {
             get { return grad; }
             set { grad = value; }
         }
 
-
-
-
-        public Pacijent(int id_pacijenti, string ime, string prezime, string email, int telefon, Grad grad)
+        public Osoba(int id_osoba, string ime, string prezime, string email, int telefon, string grad)
         {
-            this.id_pacijent = id_pacijenti;
+            this.id_osoba = id_osoba;
             this.ime = ime;
             this.prezime = prezime;
             this.email = email;
@@ -60,14 +58,15 @@ namespace ZubarskaOrdinacija.Model
             this.grad = grad;
         }
 
-        public Pacijent()
+        public Osoba()
         {
-            this.id_pacijent = 0;
-            this.ime = "";
-            this.prezime = "";
-            this.email = "";
-            this.telefon = 0;
-            this.grad = null;
+            id_osoba = 0;
+            ime = "";
+            prezime = "";
+            email = "";
+            telefon = 0;
+            grad = "";
         }
+
     }
 }
