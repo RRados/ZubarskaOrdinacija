@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ZubarskaOrdinacija.Model
 {
-    class PodaciBaza
+    public class PodaciBaza
     {
 
         private Osoba osoba;
@@ -64,3 +64,4 @@ namespace ZubarskaOrdinacija.Model
 
     }
 }
+
