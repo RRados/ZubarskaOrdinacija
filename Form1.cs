@@ -17,6 +17,7 @@ namespace ZubarskaOrdinacija
     {
         PodaciBaza podaciBaza;
         DodavanjeNovog frm_novi;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,19 +39,44 @@ namespace ZubarskaOrdinacija
         {
             podaciBaza = new PodaciBaza();
 
-            dataGridView.DataSource = podaciBaza.UcitajPodatke($"Select * from Lekari where ime='{txt_Bx_Pretraga.Text}'");
+            if(!(txt_Bx_Pretraga.Text == string.Empty))
+            {
+                dataGridView.DataSource = podaciBaza.UcitajPodatke($"Select * from Lekari where ime='{txt_Bx_Pretraga.Text}'");
+            }
+            else
+            {
+                MessageBox.Show("Upisi ime za pretragu","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
         private void lekarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frm_novi = new DodavanjeNovog();
 
+            if (lekarToolStripMenuItem.Text == "Lekar")
+            { 
+                frm_novi.Text = "Novi lekar";
+                frm_novi.Icon = new Icon("../../Ikone/doctor.ico");
+                frm_novi.Show();
+            }
         }
 
 
         private void pacijentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frm_novi = new DodavanjeNovog();
 
+            if (pacijentToolStripMenuItem.Text == "Pacijent")
+            {
+                frm_novi.Text = "Novi pacijent";
+                frm_novi.Icon = new Icon("../../Ikone/person.ico");
+                frm_novi.Show();
+            }
         }
 
+        private void obrisiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = podaciBaza.UcitajPodatke("Select * from Lekari");
+        }
     }
 }

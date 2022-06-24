@@ -15,10 +15,10 @@ namespace ZubarskaOrdinacija
     public partial class DodavanjeNovog : Form
     {
         Form1 form;
+
         PodaciBaza podaci;
         Osoba osoba;
         public string upit;
-
 
         public DodavanjeNovog()
         {
@@ -29,41 +29,33 @@ namespace ZubarskaOrdinacija
 
         private void DodavanjeNovog_Load(object sender, EventArgs e)
         {
+            combo_grad.Items.Clear();
             combo_grad.DataSource = podaci.UcitajPodatke("SELECT DISTINCT NazivGrada FROM Gradovi");
             combo_grad.DisplayMember = "NazivGrada";
-            upit = $"INSERT into {podaci.tabela} (Ime, Prezime, Email, Telefon, FK_Grad) values({osoba.Ime}, {osoba.Prezime}, {osoba.Email}, {osoba.Telefon}, {combo_grad.SelectedIndex})".ToString();
         }
-
-
-        public void UnosPodataka(string upit)
-        {
-            podaci = new PodaciBaza();
-            this.upit = upit;
-
-            osoba.Ime = txtBx_ime.Text;
-            osoba.Prezime = txtBx_prezime.Text;
-            osoba.Email = txtBx_email.Text;
-            osoba.Grad = combo_grad.SelectedIndex.ToString();
-            osoba.Telefon = int.Parse(maskedTextBox_telefon.Text); // problem konverzije maskedBoxa
-
-
-            try
-            {
-                podaci.UnosPodatka(upit);
-
-                MessageBox.Show("Podaci uspesno uneti");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message.ToString());
-            }
-        }
-
-
         private void btn_Sacuvaj_Click(object sender, EventArgs e)
         {
-            UnosPodataka(upit);
+            UnosPacijenta();
         }
+
+        public void UnosPacijenta()
+        {
+            podaci = new PodaciBaza();
+
+            if (!(txtBx_ime.Text == string.Empty && txtBx_prezime.Text == string.Empty && txtBx_email.Text == string.Empty && combo_grad.SelectedIndex == 0 && maskedTextBox_telefon.Text == string.Empty))
+            {
+                osoba.Ime = txtBx_ime.Text;
+                osoba.Prezime = txtBx_prezime.Text;
+                osoba.Email = txtBx_email.Text;
+                osoba.Telefon = Convert.ToString(maskedTextBox_telefon.Text);
+                osoba.Grad = combo_grad.SelectedIndex.ToString();
+
+                podaci.UnosPodatka();
+            }
+        }
+
+
+
 
 
         private void btn_Otkazi_Click(object sender, EventArgs e)

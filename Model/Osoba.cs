@@ -12,7 +12,7 @@ namespace ZubarskaOrdinacija.Model
         private string ime;
         private string prezime;
         private string email;
-        private int telefon;
+        private string telefon;
         private string grad;
 
 
@@ -37,7 +37,7 @@ namespace ZubarskaOrdinacija.Model
             get { return email; }
             set { email = value; }
         }
-        public int Telefon
+        public string Telefon
         {
             get { return telefon; }
             set { telefon = value; }
@@ -48,7 +48,7 @@ namespace ZubarskaOrdinacija.Model
             set { grad = value; }
         }
 
-        public Osoba(int id_osoba, string ime, string prezime, string email, int telefon, string grad)
+        public Osoba(int id_osoba, string ime, string prezime, string email, string telefon, string grad)
         {
             this.id_osoba = id_osoba;
             this.ime = ime;
@@ -64,7 +64,7 @@ namespace ZubarskaOrdinacija.Model
             ime = "";
             prezime = "";
             email = "";
-            telefon = 0;
+            telefon = "";
             grad = "";
         }
 
