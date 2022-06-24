@@ -95,6 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ikone\add_new_16.png" />
+    <Content Include="Ikone\add_new_32.png" />
     <Content Include="Ikone\doctor.ico" />
     <Content Include="Ikone\doctor_16.png" />
     <Content Include="Ikone\doctor_32.png" />

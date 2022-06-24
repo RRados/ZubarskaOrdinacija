@@ -49,7 +49,7 @@ namespace ZubarskaOrdinacija
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(56, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 18);
+            this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime";
             // 
@@ -57,7 +57,7 @@ namespace ZubarskaOrdinacija
             // 
             this.txtBx_ime.Location = new System.Drawing.Point(122, 52);
             this.txtBx_ime.Name = "txtBx_ime";
-            this.txtBx_ime.Size = new System.Drawing.Size(139, 24);
+            this.txtBx_ime.Size = new System.Drawing.Size(139, 21);
             this.txtBx_ime.TabIndex = 1;
             // 
             // btn_Sacuvaj
@@ -84,7 +84,7 @@ namespace ZubarskaOrdinacija
             // 
             this.txtBx_prezime.Location = new System.Drawing.Point(122, 112);
             this.txtBx_prezime.Name = "txtBx_prezime";
-            this.txtBx_prezime.Size = new System.Drawing.Size(139, 24);
+            this.txtBx_prezime.Size = new System.Drawing.Size(139, 21);
             this.txtBx_prezime.TabIndex = 2;
             // 
             // label2
@@ -92,7 +92,7 @@ namespace ZubarskaOrdinacija
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 18);
+            this.label2.Size = new System.Drawing.Size(53, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Prezime";
             // 
@@ -101,7 +101,7 @@ namespace ZubarskaOrdinacija
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(34, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 18);
+            this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Telefon";
             // 
@@ -109,7 +109,7 @@ namespace ZubarskaOrdinacija
             // 
             this.txtBx_email.Location = new System.Drawing.Point(122, 236);
             this.txtBx_email.Name = "txtBx_email";
-            this.txtBx_email.Size = new System.Drawing.Size(139, 24);
+            this.txtBx_email.Size = new System.Drawing.Size(139, 21);
             this.txtBx_email.TabIndex = 4;
             // 
             // label4
@@ -117,7 +117,7 @@ namespace ZubarskaOrdinacija
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(47, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 18);
+            this.label4.Size = new System.Drawing.Size(39, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Email";
             // 
@@ -126,7 +126,7 @@ namespace ZubarskaOrdinacija
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(49, 300);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 18);
+            this.label5.Size = new System.Drawing.Size(34, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "Grad";
             // 
@@ -134,23 +134,23 @@ namespace ZubarskaOrdinacija
             // 
             this.maskedTextBox_telefon.Location = new System.Drawing.Point(122, 174);
             this.maskedTextBox_telefon.Name = "maskedTextBox_telefon";
-            this.maskedTextBox_telefon.Size = new System.Drawing.Size(139, 24);
+            this.maskedTextBox_telefon.Size = new System.Drawing.Size(139, 21);
             this.maskedTextBox_telefon.TabIndex = 3;
             // 
             // combo_grad
             // 
             this.combo_grad.FormattingEnabled = true;
-            this.combo_grad.ItemHeight = 18;
+            this.combo_grad.ItemHeight = 15;
             this.combo_grad.Location = new System.Drawing.Point(122, 297);
             this.combo_grad.Name = "combo_grad";
-            this.combo_grad.Size = new System.Drawing.Size(139, 26);
+            this.combo_grad.Size = new System.Drawing.Size(139, 23);
             this.combo_grad.TabIndex = 16;
             // 
             // DodavanjeNovog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 446);
+            this.ClientSize = new System.Drawing.Size(327, 454);
             this.Controls.Add(this.combo_grad);
             this.Controls.Add(this.maskedTextBox_telefon);
             this.Controls.Add(this.label5);
@@ -171,7 +171,6 @@ namespace ZubarskaOrdinacija
             this.Name = "DodavanjeNovog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DodavanjeNovog";
-            this.Load += new System.EventHandler(this.DodavanjeNovog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

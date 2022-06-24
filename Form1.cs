@@ -21,10 +21,12 @@ namespace ZubarskaOrdinacija
         public Form1()
         {
             InitializeComponent();
+            UcitajPodatke();
             frm_novi = new DodavanjeNovog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        public void UcitajPodatke()
         {
             podaciBaza = new PodaciBaza();
 
@@ -39,22 +41,26 @@ namespace ZubarskaOrdinacija
         {
             podaciBaza = new PodaciBaza();
 
-            if(!(txt_Bx_Pretraga.Text == string.Empty))
+            if (!(txt_Bx_Pretraga.Text == string.Empty))
             {
                 dataGridView.DataSource = podaciBaza.UcitajPodatke($"Select * from Lekari where ime='{txt_Bx_Pretraga.Text}'");
             }
             else
             {
-                MessageBox.Show("Upisi ime za pretragu","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Upisi ime za pretragu", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
+
+
+
+        // pozivanje forme 'Dodavanje novog' i izmena teksta forme i izmena ikone za lekara
         private void lekarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_novi = new DodavanjeNovog();
 
             if (lekarToolStripMenuItem.Text == "Lekar")
-            { 
+            {
                 frm_novi.Text = "Novi lekar";
                 frm_novi.Icon = new Icon("../../Ikone/doctor.ico");
                 frm_novi.Show();
@@ -62,6 +68,9 @@ namespace ZubarskaOrdinacija
         }
 
 
+
+
+        // pozivanje forme 'Dodavanje novog' i izmena teksta forme i izmena ikone za pacijenta
         private void pacijentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_novi = new DodavanjeNovog();
@@ -74,9 +83,30 @@ namespace ZubarskaOrdinacija
             }
         }
 
-        private void obrisiToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        // context menu item 'osvezi' ucitava glavnu formu iznova
+        private void OsveziToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = podaciBaza.UcitajPodatke("Select * from Lekari");
+            UcitajPodatke();
         }
+
+
+
+
+        // context menu item 'obrisi', desnim klikom na 'obrisi' brise izabranu vrednost iz dataGridView-a i ponovo se ucitavaju podaci iz baze
+        private void ObrisiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PodaciBaza podaciBaza = new PodaciBaza();
+
+            string upitObrisi = "DELETE FROM Lekari WHERE IDLekar=" + dataGridView.CurrentRow.Cells[0].Value;
+
+            podaciBaza.ObrisiLekara(upitObrisi);
+
+            UcitajPodatke();
+        }
+
+
     }
 }
