@@ -32,15 +32,14 @@ namespace ZubarskaOrdinacija
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.obrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.azurirajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.osveziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OsveziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ObrisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Pregledi = new System.Windows.Forms.Button();
             this.btn_Zakazi = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -61,72 +60,66 @@ namespace ZubarskaOrdinacija
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.ContextMenuStrip = this.contextMenuStrip;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView.Location = new System.Drawing.Point(0, 24);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(684, 368);
+            this.dataGridView.Size = new System.Drawing.Size(684, 372);
             this.dataGridView.TabIndex = 0;
             // 
             // contextMenuStrip
             // 
             this.contextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.obrisiToolStripMenuItem,
-            this.azurirajToolStripMenuItem,
-            this.osveziToolStripMenuItem});
+            this.OsveziToolStripMenuItem,
+            this.ObrisiToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip.Size = new System.Drawing.Size(109, 48);
             this.contextMenuStrip.Text = "Obrisi";
             // 
-            // obrisiToolStripMenuItem
+            // OsveziToolStripMenuItem
             // 
-            this.obrisiToolStripMenuItem.Name = "obrisiToolStripMenuItem";
-            this.obrisiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.obrisiToolStripMenuItem.Text = "Osvezi";
-            this.obrisiToolStripMenuItem.Click += new System.EventHandler(this.obrisiToolStripMenuItem_Click);
+            this.OsveziToolStripMenuItem.Name = "OsveziToolStripMenuItem";
+            this.OsveziToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OsveziToolStripMenuItem.Text = "Osvezi";
+            this.OsveziToolStripMenuItem.Click += new System.EventHandler(this.OsveziToolStripMenuItem_Click);
             // 
-            // azurirajToolStripMenuItem
+            // ObrisiToolStripMenuItem
             // 
-            this.azurirajToolStripMenuItem.Name = "azurirajToolStripMenuItem";
-            this.azurirajToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.azurirajToolStripMenuItem.Text = "Azuriraj";
-            // 
-            // osveziToolStripMenuItem
-            // 
-            this.osveziToolStripMenuItem.Name = "osveziToolStripMenuItem";
-            this.osveziToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.osveziToolStripMenuItem.Text = "Obrisi";
+            this.ObrisiToolStripMenuItem.Name = "ObrisiToolStripMenuItem";
+            this.ObrisiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ObrisiToolStripMenuItem.Text = "Obrisi";
+            this.ObrisiToolStripMenuItem.Click += new System.EventHandler(this.ObrisiToolStripMenuItem_Click);
             // 
             // btn_Pregledi
             // 
@@ -154,7 +147,7 @@ namespace ZubarskaOrdinacija
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(684, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -163,7 +156,7 @@ namespace ZubarskaOrdinacija
             this.toolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noviToolStripMenuItem});
             this.toolStripMenuItem.Name = "toolStripMenuItem";
-            this.toolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.toolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolStripMenuItem.Text = "Meni";
             // 
             // noviToolStripMenuItem
@@ -172,14 +165,14 @@ namespace ZubarskaOrdinacija
             this.lekarToolStripMenuItem,
             this.pacijentToolStripMenuItem});
             this.noviToolStripMenuItem.Name = "noviToolStripMenuItem";
-            this.noviToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.noviToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.noviToolStripMenuItem.Text = "Novi";
             // 
             // lekarToolStripMenuItem
             // 
             this.lekarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lekarToolStripMenuItem.Image")));
             this.lekarToolStripMenuItem.Name = "lekarToolStripMenuItem";
-            this.lekarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lekarToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.lekarToolStripMenuItem.Text = "Lekar";
             this.lekarToolStripMenuItem.Click += new System.EventHandler(this.lekarToolStripMenuItem_Click);
             // 
@@ -187,7 +180,7 @@ namespace ZubarskaOrdinacija
             // 
             this.pacijentToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pacijentToolStripMenuItem.Image")));
             this.pacijentToolStripMenuItem.Name = "pacijentToolStripMenuItem";
-            this.pacijentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pacijentToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.pacijentToolStripMenuItem.Text = "Pacijent";
             this.pacijentToolStripMenuItem.Click += new System.EventHandler(this.pacijentToolStripMenuItem_Click);
             // 
@@ -211,7 +204,7 @@ namespace ZubarskaOrdinacija
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 396);
             this.Controls.Add(this.btn_Pretraga);
@@ -250,9 +243,8 @@ namespace ZubarskaOrdinacija
         private System.Windows.Forms.TextBox txt_Bx_Pretraga;
         private System.Windows.Forms.Button btn_Pretraga;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem obrisiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem azurirajToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem osveziToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OsveziToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ObrisiToolStripMenuItem;
     }
 }
 

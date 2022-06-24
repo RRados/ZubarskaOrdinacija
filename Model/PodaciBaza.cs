@@ -16,13 +16,12 @@ namespace ZubarskaOrdinacija.Model
         private Zakazivanje zakazivanje;
         private SqlDataAdapter adapter;
         private DataSet dataSet;
-        
 
 
         public PodaciBaza()
         {
             osoba = new Osoba();
-            zakazivanje = new Zakazivanje();            
+            zakazivanje = new Zakazivanje();
         }
 
 
@@ -47,15 +46,14 @@ namespace ZubarskaOrdinacija.Model
 
 
 
-        public void UnosPodatka()
+        public void UnosPodatka(string upit)
         {
             SqlConnection connection = new SqlConnection(CnnString.cnn);
 
             try
             {
-                              
-                using (SqlCommand command = new SqlCommand("INSERT INTO Pacijenti (Ime, Prezime, Email, Telefon, FK_Grad) values (@ime, @prezime, @email, @telefon, @id_grad)", connection))
-                {                        
+                using (SqlCommand command = new SqlCommand(upit, connection))
+                {
                     connection.Open();
 
                     command.CommandType = CommandType.Text;
@@ -68,17 +66,49 @@ namespace ZubarskaOrdinacija.Model
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Podaci uspesno uneti","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Podaci uspesno uneti", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-               
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(),"Greska",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 connection.Close();
+            }
+        }
+
+
+        public void ObrisiLekara(string upitObrisi)
+        {
+            if (MessageBox.Show("Da li zelis da obrises lekara ?", "Upozorenje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                SqlConnection connection = new SqlConnection(CnnString.cnn);
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(upitObrisi, connection))
+                    {
+                        command.ExecuteScalar();
+
+                        MessageBox.Show("Lekar uspesno obrisan!", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Greska!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            else
+            {
+                return;
             }
         }
     }
