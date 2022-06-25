@@ -17,7 +17,6 @@ namespace ZubarskaOrdinacija
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new OsnovnaForma());
-            // savo
         }
     }
 }
