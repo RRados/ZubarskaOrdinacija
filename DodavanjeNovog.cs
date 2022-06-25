@@ -14,19 +14,26 @@ namespace ZubarskaOrdinacija
 {
     public partial class DodavanjeNovog : Form
     {
-        PodaciBaza podaci;
-        Osoba osoba;
-        public string upit;
 
-        public DodavanjeNovog()
+        private Form1 form1;
+        private PodaciBaza podaci;
+        private Osoba osoba;
+
+
+
+        public DodavanjeNovog(Form1 form1)
         {
             InitializeComponent();
+
             osoba = new Osoba();
             podaci = new PodaciBaza();
+
+            this.form1 = form1;
 
             UcitavanjePodatakaCombo();
             CiscenjeKontrola();
         }
+
 
 
         public void UcitavanjePodatakaCombo()
@@ -36,14 +43,16 @@ namespace ZubarskaOrdinacija
         }
 
 
+
         private void btn_Sacuvaj_Click(object sender, EventArgs e)
         {
-            UnosPacijenta();
+            UnosLekara();
         }
 
 
-        // unos PACIJENT-a ... ne valja, izmeni upit da prihvati lekara i/ili pacijenta
-        public void UnosPacijenta()
+
+        // na uspesan unos, kontrole se ciste,  forma ostaje aktivna, gridView se azurira
+        public void UnosLekara()
         {
             PodaciBaza podaci = new PodaciBaza();
 
@@ -55,13 +64,13 @@ namespace ZubarskaOrdinacija
                 osoba.Telefon = Convert.ToString(maskedTextBox_telefon.Text);
                 osoba.Grad = Convert.ToInt32(combo_grad.SelectedIndex);
 
-                podaci.UnosPodatka($"INSERT INTO Lekari (Ime, Prezime, Email, Telefon, FK_Grad) values ( '{osoba.Ime}', '{osoba.Prezime}', '{osoba.Email}', '{osoba.Telefon}', '{osoba.Grad}' )");
-
+                podaci.UnosPodatka($"INSERT INTO Lekari VALUES ('{osoba.Ime}','{osoba.Prezime}','{osoba.Email}','{osoba.Telefon}','{osoba.Grad}')");
             }
-            // na uspesan unos, kontrole se ciste, forma ostaje aktivna...
-            CiscenjeKontrola();
-        }
 
+            CiscenjeKontrola();
+
+            form1.UcitajPodatke();
+        }
 
 
 
@@ -70,11 +79,14 @@ namespace ZubarskaOrdinacija
             CiscenjeKontrola();
         }
 
+
+
+
         public void CiscenjeKontrola()
         {
             txtBx_ime.Clear();
             txtBx_prezime.Clear();
-            combo_grad.ResetText();
+            combo_grad.Text = null;
             txtBx_email.Clear();
             maskedTextBox_telefon.Clear();
         }

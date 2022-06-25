@@ -16,6 +16,7 @@ namespace ZubarskaOrdinacija.Model
         private int grad;
 
 
+
         public int ID_Osoba
         {
             get { return id_osoba; }
@@ -65,6 +66,7 @@ namespace ZubarskaOrdinacija.Model
         }
 
 
+
         public Osoba()
         {
             id_osoba = 0;
@@ -74,6 +76,5 @@ namespace ZubarskaOrdinacija.Model
             telefon = "";
             grad = 0;
         }
-
     }
 }

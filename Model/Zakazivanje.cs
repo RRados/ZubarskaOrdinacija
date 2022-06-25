@@ -14,6 +14,8 @@ namespace ZubarskaOrdinacija.Model
         private DateTime datum_vreme_dolaska;
         private string razlog_dolaska;
 
+
+
         public int IdZakazivanje
         {
             get { return id_Zakazivanje; }
@@ -21,11 +23,15 @@ namespace ZubarskaOrdinacija.Model
         }
 
 
+
         public string RazlogDolaska
         {
             get { return razlog_dolaska; }
             set { razlog_dolaska = value; }
         }
+
+
+
 
         public DateTime DatumVremeDolaska
         {
@@ -43,6 +49,7 @@ namespace ZubarskaOrdinacija.Model
             this.datum_vreme_dolaska = datum_vreme_dolaska;
             this.razlog_dolaska = razlog_dolaska;
         }
+
 
 
         public Zakazivanje()

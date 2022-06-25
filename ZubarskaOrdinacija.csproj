@@ -64,6 +64,12 @@
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\PodaciBaza.cs" />
     <Compile Include="Model\Zakazivanje.cs" />
+    <Compile Include="OsnovnaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OsnovnaForma.Designer.cs">
+      <DependentUpon>OsnovnaForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DodavanjeNovog.resx">
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OsnovnaForma.resx">
+      <DependentUpon>OsnovnaForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

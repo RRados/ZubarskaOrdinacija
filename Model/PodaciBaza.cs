@@ -25,7 +25,6 @@ namespace ZubarskaOrdinacija.Model
         }
 
 
-
         public DataTable UcitajPodatke(string upit)
         {
             dataSet = new DataSet();
@@ -42,8 +41,6 @@ namespace ZubarskaOrdinacija.Model
                 }
             }
         }
-
-
 
 
         public void UnosPodatka(string upit)
@@ -66,9 +63,8 @@ namespace ZubarskaOrdinacija.Model
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Podaci uspesno uneti", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Podaci uspesno uneti!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             catch (Exception ex)
             {
@@ -81,9 +77,9 @@ namespace ZubarskaOrdinacija.Model
         }
 
 
-        public void ObrisiLekara(string upitObrisi)
+        public void Obrisi(string upitObrisi, string staBrisem)
         {
-            if (MessageBox.Show("Da li zelis da obrises lekara ?", "Upozorenje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            if (MessageBox.Show("Da li zelis da obrises " + staBrisem + " ? ", "Upozorenje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 SqlConnection connection = new SqlConnection(CnnString.cnn);
                 try
@@ -94,7 +90,7 @@ namespace ZubarskaOrdinacija.Model
                     {
                         command.ExecuteScalar();
 
-                        MessageBox.Show("Lekar uspesno obrisan!", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Uspesno obrisano!", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)

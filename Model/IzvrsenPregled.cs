@@ -21,27 +21,34 @@ namespace ZubarskaOrdinacija.Model
             get { return cena_pregleda; }
             set { cena_pregleda = value; }
         }
+
+
         public string Dijagnoza
         {
             get { return dijagnoza; }
             set { dijagnoza = value; }
         }
+
+
         public string Anamneza
         {
             get { return anamneza; }
             set { anamneza = value; }
         }
+
+
         public DateTime Datum
         {
             get { return datum; }
             set { datum = value; }
         }
+
+
         public int ID_Izvseni_Pregledi
         {
             get { return id_izvrsen_pregled; }
             set { id_izvrsen_pregled = value; }
         }
-
 
 
         public IzvrsenPregled()
