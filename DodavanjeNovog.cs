@@ -46,9 +46,16 @@ namespace ZubarskaOrdinacija
 
         private void btn_Sacuvaj_Click(object sender, EventArgs e)
         {
-            UnosLekara();
-        }
+            if (this.Text == "Novi pacijent")
+            {
+                UnosPacijent();
+            }
 
+            if (this.Text == "Novi lekar")
+            {
+                UnosLekara();
+            }
+        }
 
 
         // na uspesan unos, kontrole se ciste,  forma ostaje aktivna, gridView se azurira
@@ -63,7 +70,6 @@ namespace ZubarskaOrdinacija
                 osoba.Email = txtBx_email.Text;
                 osoba.Telefon = Convert.ToString(maskedTextBox_telefon.Text);
                 osoba.Grad = Convert.ToInt32(combo_grad.SelectedIndex);
-
 
                 podaci.UnosPodatka($"INSERT INTO Lekari VALUES ('{osoba.Ime}','{osoba.Prezime}','{osoba.Email}','{osoba.Telefon}','{osoba.Grad}')");
             }
@@ -89,6 +95,8 @@ namespace ZubarskaOrdinacija
 
             CiscenjeKontrola();
         }
+
+
 
         private void btn_Otkazi_Click(object sender, EventArgs e)
         {

@@ -34,15 +34,6 @@ namespace ZubarskaOrdinacija
 
 
 
-
-        private void Btn_Forma_Click(object sender, EventArgs e)
-        {
-            Form1 form1 = new Form1();
-            form1.Show();
-        }
-
-
-
         // pozivanje forme 'Dodavanje novog sa arg(Form1 'this')' i izmena teksta forme i izmena ikone za lekara
         private void noviPacijentToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -50,6 +41,16 @@ namespace ZubarskaOrdinacija
 
             frm_novi.Text = "Novi pacijent";
             frm_novi.Icon = new Icon("../../Ikone/person.ico");
+
+            frm_novi.Show();
+        }
+
+        private void dodavanjeNovogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_novi = new DodavanjeNovog(this);
+
+            frm_novi.Text = "Novi lekar";
+            frm_novi.Icon = new Icon("../../Ikone/doctor.ico");
 
             frm_novi.Show();
         }
@@ -79,9 +80,9 @@ namespace ZubarskaOrdinacija
         {
             PodaciBaza podaciBaza = new PodaciBaza();
 
-            string upitObrisi = "DELETE FROM Pacijenti WHERE IDPacijent=" + dataGridView1.CurrentRow.Cells[0].RowIndex;
+            string upitObrisi = "DELETE FROM Lekari WHERE IDLekar=" + dataGridView1.CurrentRow.Cells[0].RowIndex;
 
-            podaciBaza.Obrisi(upitObrisi, "Pacijenti");
+            podaciBaza.Obrisi(upitObrisi, "Lekara");
         }
 
 
@@ -124,7 +125,9 @@ namespace ZubarskaOrdinacija
         // dva event-a spojena u jednom: objektom 'sender' se hvata vrednost klik-a, prikaz svih PACIJENTA I LEKARA su registrovani na ovu metodu
         private void osobe_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = podaciBaza.UcitajPodatke($"select ime, prezime, Email, telefon, grad.NazivGrada from {sender.ToString()} l inner join Gradovi grad ON grad.IDGrad = l.FK_Grad");
+            dataGridView1.DataSource = podaciBaza.UcitajPodatke($"select ime, prezime, Email, Telefon, grad.NazivGrada from {sender.ToString()} l inner join Gradovi grad ON grad.IDGrad = l.FK_Grad");
         }
+
+
     }
 }

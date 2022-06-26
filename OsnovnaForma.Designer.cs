@@ -57,7 +57,6 @@ namespace ZubarskaOrdinacija
             this.label1 = new System.Windows.Forms.Label();
             this.txtBx_pretraga = new System.Windows.Forms.TextBox();
             this.Btn_pretraga2 = new System.Windows.Forms.Button();
-            this.Btn_Forma = new System.Windows.Forms.Button();
             this.menuStrip_ordinacija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
@@ -92,7 +91,7 @@ namespace ZubarskaOrdinacija
             // 
             this.noviPacijentToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("noviPacijentToolStripMenuItem.Image")));
             this.noviPacijentToolStripMenuItem.Name = "noviPacijentToolStripMenuItem";
-            this.noviPacijentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviPacijentToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.noviPacijentToolStripMenuItem.Text = "Novi pacijent";
             this.noviPacijentToolStripMenuItem.Click += new System.EventHandler(this.noviPacijentToolStripMenuItem_Click);
             // 
@@ -100,7 +99,7 @@ namespace ZubarskaOrdinacija
             // 
             this.pacijenti_ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pacijenti_ToolStripMenuItem.Image")));
             this.pacijenti_ToolStripMenuItem.Name = "pacijenti_ToolStripMenuItem";
-            this.pacijenti_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacijenti_ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pacijenti_ToolStripMenuItem.Text = "Pacijenti";
             this.pacijenti_ToolStripMenuItem.Click += new System.EventHandler(this.osobe_ToolStripMenuItem_Click);
             // 
@@ -127,6 +126,7 @@ namespace ZubarskaOrdinacija
             this.dodavanjeNovogToolStripMenuItem.Name = "dodavanjeNovogToolStripMenuItem";
             this.dodavanjeNovogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dodavanjeNovogToolStripMenuItem.Text = "Novi lekar";
+            this.dodavanjeNovogToolStripMenuItem.Click += new System.EventHandler(this.dodavanjeNovogToolStripMenuItem_Click);
             // 
             // preglediToolStripMenuItem
             // 
@@ -296,22 +296,11 @@ namespace ZubarskaOrdinacija
             this.Btn_pretraga2.UseVisualStyleBackColor = true;
             this.Btn_pretraga2.Click += new System.EventHandler(this.Btn_pretraga_Click);
             // 
-            // Btn_Forma
-            // 
-            this.Btn_Forma.Location = new System.Drawing.Point(458, 45);
-            this.Btn_Forma.Name = "Btn_Forma";
-            this.Btn_Forma.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Forma.TabIndex = 10;
-            this.Btn_Forma.Text = "Forma";
-            this.Btn_Forma.UseVisualStyleBackColor = true;
-            this.Btn_Forma.Click += new System.EventHandler(this.Btn_Forma_Click);
-            // 
             // OsnovnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 502);
-            this.Controls.Add(this.Btn_Forma);
             this.Controls.Add(this.Btn_pretraga2);
             this.Controls.Add(this.txtBx_pretraga);
             this.Controls.Add(this.label1);
@@ -347,7 +336,6 @@ namespace ZubarskaOrdinacija
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBx_pretraga;
         private System.Windows.Forms.Button Btn_pretraga2;
-        private System.Windows.Forms.Button Btn_Forma;
         private System.Windows.Forms.ToolStripMenuItem noviPacijentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uputstvoToolStripMenuItem;
