@@ -78,6 +78,7 @@ namespace ZubarskaOrdinacija
         }
 
 
+
         public void UnosPacijent()
         {
             PodaciBaza podaci = new PodaciBaza();
@@ -95,6 +96,7 @@ namespace ZubarskaOrdinacija
 
             CiscenjeKontrola();
         }
+
 
 
 

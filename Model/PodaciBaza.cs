@@ -77,9 +77,11 @@ namespace ZubarskaOrdinacija.Model
         }
 
 
-        public void Obrisi(string upitObrisi, string staBrisem)
+
+
+        public void Obrisi(string upitObrisi)
         {
-            if (MessageBox.Show("Da li zelis da obrises " + staBrisem + " ? ", "Upozorenje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            if (MessageBox.Show("Ovim ce te zbrisati podatak!\nDa li to zelite ?", "Upozorenje", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 SqlConnection connection = new SqlConnection(CnnString.cnn);
                 try
@@ -107,6 +109,8 @@ namespace ZubarskaOrdinacija.Model
                 return;
             }
         }
+
+
     }
 }
 

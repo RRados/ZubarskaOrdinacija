@@ -64,7 +64,7 @@ namespace ZubarskaOrdinacija
             // 
             this.btn_Sacuvaj.Location = new System.Drawing.Point(36, 380);
             this.btn_Sacuvaj.Name = "btn_Sacuvaj";
-            this.btn_Sacuvaj.Size = new System.Drawing.Size(93, 34);
+            this.btn_Sacuvaj.Size = new System.Drawing.Size(111, 30);
             this.btn_Sacuvaj.TabIndex = 6;
             this.btn_Sacuvaj.Text = "Sacuvaj";
             this.btn_Sacuvaj.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@ namespace ZubarskaOrdinacija
             // 
             // btn_Otkazi
             // 
-            this.btn_Otkazi.Location = new System.Drawing.Point(182, 380);
+            this.btn_Otkazi.Location = new System.Drawing.Point(171, 380);
             this.btn_Otkazi.Name = "btn_Otkazi";
-            this.btn_Otkazi.Size = new System.Drawing.Size(93, 34);
+            this.btn_Otkazi.Size = new System.Drawing.Size(111, 30);
             this.btn_Otkazi.TabIndex = 7;
             this.btn_Otkazi.Text = "Otkazi";
             this.btn_Otkazi.UseVisualStyleBackColor = true;
