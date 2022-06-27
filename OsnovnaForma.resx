@@ -121,34 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="prikaz_Svih_Zakazivanja_TsMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAArpJREFUWEft
-        VUtrFEEQXlFBwUd8HRX9A4J4ESF6iHpQEC+eBEmcmfi4iB4FYdVgLpLIpqdjIOIth6h4Fq8KvvAtEqIo
-        xOx295pEohgjmvGrmto4u0nMhHiS+aDo7qqvaqq7qntyGTJkyJAWB3ujhYEu7wxC2+aH9h6kCBkWKfra
-        3sV4ydeunrjiNn8cVh/XBMqeQ3AHiVIKcfNe98BqCTN3nGobWOppdwGBxhKB+7HDdl+5vcc6SxuP68+r
-        SPwOs8nT5X1e6C7jJN7GXBN52oxjnm+89n6JhE0HX9ndcHwnHyUp4+i3i3lW+AVXD5+vCf9+T5kGMc+M
-        fD5ahMxb4TAhjpVjPy8URnNXtFh4H2IxraQTM8NX5gz7KvNJYvzyQ9cyY380to/UgXQndrLjQWhOYv6Y
-        17q8VWgM+XhldyyBMhfFzEApNoutL9D2NMYfzAvt7eau4ZVCi0GNBuMLcRj0tdlGesxHSEfJMVEAHd2A
-        qgRIJ2YG9ZDov9GaSoh5iXRI6Nlkgx65Wl6Oo3ko5FdN4eB6NgBYcx1PhG6ZqBjQcaAaqUogjsv6UVGh
-        dMUNuFGvSe+F9j5x4muGjIRcm0Af63GcomKkKYHX6bbENvNGVFUJQJ5OnkJTobQOipdiSJTAdYvuLBMF
-        iSakJoVM04S4fuyrbBetkyWAPEcya5lYwXRN2BzaPeJQPlQYWiHUWcGxlB0i36NXTMOsTVjBlGuo7AOM
-        T8SxNxdFC4Q6M8AB/yb78y0yj2T+92uYBD6ceIjcBHqAs/eUvUEvn9CmgPsptLfYTznyiTeC1xGnsEto
-        6RBfI9eCAF84yB8Z8ztsT6DNfjyxdSSetgeg78Fuv9dwR+k/QrEk7Nwx+TPShmuaRvDs0us3v59RLah2
-        nnI7EBj1NRbjz8oHaY6jNxiv//PfcYYMGf5z5HK/AaPg5Y4WLQYlAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="zakazivanje_PregledaTsMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAT9JREFUWEft
-        lz1OxDAQhXMaJCRAVCugpgEKKi5AbA6D7YWWggtwBdoVK8RKnALWdjoooIMZaQpijyOSmD/hJ32Spcyb
-        94qNnK2KfrVOpna9Vs1BbfzRINCr7Bqt+7ykcTtCuwXwlgVl74SxW7S+W8fKbYPpNVoynpd6upxQTFow
-        eB8Yc7KgGF7i7HGVMWVFmmaF4mIJ4/c5U4IlcEHgmZuJkNrvUVws+LEcciYW42Zkg+Juxs5wQAbZYpUC
-        pUCiwANwHVJrf062Cs/cDIDe9r6+BaS2l/S4t9Ab7vt7BYAGwIupxcdiFBTNAOht7xtQgOc/vQU8pcCX
-        FOh3HTdSuysEz8GzJN3X8U9/kKBgCN9f1pyBW4pJS576TRh8Dow5eMLPfIrpllBuAwzzYMEYbgb9P8DG
-        UrndMQwKLvo+VdU72TpJ7rytNdMAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="pacijenti_ToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAA4pJREFUWEft
@@ -223,6 +195,34 @@
         GAWjABtImvLSMnn6czMol/4gderL9SlTX2yFcukDQlf9Z06Z8nJKytSXT4H4LxD/A+JnQDy9oeE/C0gN
         kP2fUgy2DBfImvqKJ3Xqq31IGnaDxKDStHcACKRMezUbGBI/gYp/JU99ORUqTD8AjP/upGkvldImvVQG
         poN2qPAoGGFgtCAC4tGCaLQgGgUDC0YLIiAeLYhGC6JRMFIAAwMAsKvl1C1rvnMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="prikaz_Svih_Zakazivanja_TsMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAArpJREFUWEft
+        VUtrFEEQXlFBwUd8HRX9A4J4ESF6iHpQEC+eBEmcmfi4iB4FYdVgLpLIpqdjIOIth6h4Fq8KvvAtEqIo
+        xOx295pEohgjmvGrmto4u0nMhHiS+aDo7qqvaqq7qntyGTJkyJAWB3ujhYEu7wxC2+aH9h6kCBkWKfra
+        3sV4ydeunrjiNn8cVh/XBMqeQ3AHiVIKcfNe98BqCTN3nGobWOppdwGBxhKB+7HDdl+5vcc6SxuP68+r
+        SPwOs8nT5X1e6C7jJN7GXBN52oxjnm+89n6JhE0HX9ndcHwnHyUp4+i3i3lW+AVXD5+vCf9+T5kGMc+M
+        fD5ahMxb4TAhjpVjPy8URnNXtFh4H2IxraQTM8NX5gz7KvNJYvzyQ9cyY380to/UgXQndrLjQWhOYv6Y
+        17q8VWgM+XhldyyBMhfFzEApNoutL9D2NMYfzAvt7eau4ZVCi0GNBuMLcRj0tdlGesxHSEfJMVEAHd2A
+        qgRIJ2YG9ZDov9GaSoh5iXRI6Nlkgx65Wl6Oo3ko5FdN4eB6NgBYcx1PhG6ZqBjQcaAaqUogjsv6UVGh
+        dMUNuFGvSe+F9j5x4muGjIRcm0Af63GcomKkKYHX6bbENvNGVFUJQJ5OnkJTobQOipdiSJTAdYvuLBMF
+        iSakJoVM04S4fuyrbBetkyWAPEcya5lYwXRN2BzaPeJQPlQYWiHUWcGxlB0i36NXTMOsTVjBlGuo7AOM
+        T8SxNxdFC4Q6M8AB/yb78y0yj2T+92uYBD6ceIjcBHqAs/eUvUEvn9CmgPsptLfYTznyiTeC1xGnsEto
+        6RBfI9eCAF84yB8Z8ztsT6DNfjyxdSSetgeg78Fuv9dwR+k/QrEk7Nwx+TPShmuaRvDs0us3v59RLah2
+        nnI7EBj1NRbjz8oHaY6jNxiv//PfcYYMGf5z5HK/AaPg5Y4WLQYlAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="zakazivanje_PregledaTsMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAT9JREFUWEft
+        lz1OxDAQhXMaJCRAVCugpgEKKi5AbA6D7YWWggtwBdoVK8RKnALWdjoooIMZaQpijyOSmD/hJ32Spcyb
+        94qNnK2KfrVOpna9Vs1BbfzRINCr7Bqt+7ykcTtCuwXwlgVl74SxW7S+W8fKbYPpNVoynpd6upxQTFow
+        eB8Yc7KgGF7i7HGVMWVFmmaF4mIJ4/c5U4IlcEHgmZuJkNrvUVws+LEcciYW42Zkg+Juxs5wQAbZYpUC
+        pUCiwANwHVJrf062Cs/cDIDe9r6+BaS2l/S4t9Ab7vt7BYAGwIupxcdiFBTNAOht7xtQgOc/vQU8pcCX
+        FOh3HTdSuysEz8GzJN3X8U9/kKBgCN9f1pyBW4pJS576TRh8Dow5eMLPfIrpllBuAwzzYMEYbgb9P8DG
+        UrndMQwKLvo+VdU72TpJ7rytNdMAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="uputstvoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

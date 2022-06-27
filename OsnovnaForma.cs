@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +17,13 @@ namespace ZubarskaOrdinacija
     {
         private PodaciBaza podaciBaza;
         private DodavanjeNovog frm_novi;
-        private Zakazivanje zakazivanje;
+        private Zakazivanje_pregleda zakazivanje;
 
         public OsnovnaForma()
         {
             InitializeComponent();
             podaciBaza = new PodaciBaza();
-            zakazivanje = new Zakazivanje();
+            zakazivanje = new Zakazivanje_pregleda(this);
             UcitajPacijenteZaDanas();
         }
 
@@ -87,6 +88,8 @@ namespace ZubarskaOrdinacija
             string upitObrisi = "DELETE FROM Pacijenti WHERE IDPacijent=" + dataGridView.CurrentRow.Cells[0].RowIndex;
 
             podaciBaza.Obrisi(upitObrisi);
+
+            SpisakSvihPacijenata();
         }
 
 
@@ -102,7 +105,10 @@ namespace ZubarskaOrdinacija
                 lbl_InfoGrid.Text = "Spisak svih pacijenata";
 
             dataGridView.DataSource = podaciBaza.UcitajPodatke($"select ime, prezime, Email, Telefon, grad.NazivGrada from {sender.ToString()} l inner join Gradovi grad ON grad.IDGrad = l.FK_Grad");
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
+
 
 
 
@@ -124,17 +130,40 @@ namespace ZubarskaOrdinacija
 
 
 
+
         private void Zakazivanje_Novog_Pregleda_TsMenuItem_Click(object sender, EventArgs e)
         {
-            Zakazivanje_pregleda zakazivanje = new Zakazivanje_pregleda();
+            Zakazivanje_pregleda zakazivanje = new Zakazivanje_pregleda(this);
             zakazivanje.Show();
         }
 
 
 
 
-        // pretraga  pacijenata... procedura 
+        // pretraga  pacijenata... 
         private void Btn_pretraga_Click(object sender, EventArgs e)
+        {
+            if (txtBx_pretraga.Text != string.Empty)
+            {
+                Pretraga();
+            }
+            else
+            {
+                MessageBox.Show("Popunite polje za pretragu!", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Pretraga();
+            }
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
+        }
+
+
+
+
+
+        #region POMOCNE METODE VOID
+
+        // pretraga imena u zakazanim pregledima
+        public void Pretraga()
         {
             SqlConnection connection = new SqlConnection(CnnString.cnn);
 
@@ -168,24 +197,26 @@ namespace ZubarskaOrdinacija
 
 
 
-
-
-        #region POMOCNE METODE VOID
-
-
         // SVI ZAKAZANI PACIJENTI I LEKARI SA DANASNJIM DATUMOM
         public void UcitajPacijenteZaDanas()
         {
             dataGridView.DataSource = podaciBaza.UcitajPodatke("select pac.IDPacijent AS 'Redni broj', pac.Ime + ' ' + pac.Prezime as Pacijent, lek.Ime + ' ' + lek.Prezime AS 'Lekar' , zak.ZastoPacijentDolazi AS 'Razlog dolaska', zak.DatumIVremeDolaska AS 'DATUM' from Pacijenti pac inner join Zakazivanje zak  on pac.IDPacijent = zak.FK_Pacijent inner join Lekari lek on zak.FK_Lekar = lek.IDLekar where CAST(DatumIVremeDolaska AS date) = CAST(GETDATE() AS date)");
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
+
+
 
 
         public void Sva_Zakazivanja()
         {
             lbl_InfoGrid.Text = "Sva zakazivanja";
+
             dataGridView.DataSource = podaciBaza.UcitajPodatke("select pac.IDPacijent AS 'Redni broj', pac.Ime + ' ' + pac.Prezime as Pacijent, lek.Ime + ' ' + lek.Prezime AS 'Lekar' , zak.ZastoPacijentDolazi AS 'Razlog dolaska', zak.DatumIVremeDolaska AS 'DATUM' from Pacijenti pac inner join Zakazivanje zak  on pac.IDPacijent = zak.FK_Pacijent inner join Lekari lek on zak.FK_Lekar = lek.IDLekar");
 
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
+
 
 
 
@@ -193,27 +224,35 @@ namespace ZubarskaOrdinacija
         public void Svi_Pregledi()
         {
             lbl_InfoGrid.Text = "Svi pregledi";
+
             dataGridView.DataSource = podaciBaza.UcitajPodatke($"select ip.IDIzvrseniPregledi AS 'Broj usluge', pac.Ime + ' ' + pac.Prezime AS 'Pacijent', lek.Ime + ' ' + lek.Prezime AS 'Lekar', ip.Anamneza, ip.Dijagnoza, ip.CenaPregleda, ip.Datum, usl.NazivUsluge from IzvrseniPregledi ip inner join Pacijenti pac on ip.FK_Pacijent = pac.IDPacijent inner join Lekari lek on ip.FK_Lekar = lek.IDLekar inner join Usluge usl on ip.FK_Usluga = usl.ID_Usluga");
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
+
+
 
 
         // SPISAK SVIH PACIJENATA
         public void SpisakSvihPacijenata()
         {
             dataGridView.DataSource = podaciBaza.UcitajPodatke("SELECT l.Ime, l.Prezime, l.Telefon, l.Email, g.NazivGrada FROM Pacijenti l INNER JOIN Gradovi g ON g.IDGrad = l.FK_Grad");
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
+
+
 
 
         // SPISAK SVIH LEKARA
         public void SpisakSvihLekara()
         {
             dataGridView.DataSource = podaciBaza.UcitajPodatke("SELECT l.Ime, l.Prezime, l.Telefon, l.Email, g.NazivGrada FROM Lekari l INNER JOIN Gradovi g ON g.IDGrad = l.FK_Grad");
+
+            lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
 
 
         #endregion
-
-
-
     }
 }

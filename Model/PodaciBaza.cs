@@ -55,12 +55,6 @@ namespace ZubarskaOrdinacija.Model
 
                     command.CommandType = CommandType.Text;
 
-                    //command.Parameters.AddWithValue("@ime", osoba.Ime);
-                    //command.Parameters.AddWithValue("@prezime", osoba.Prezime);
-                    //command.Parameters.AddWithValue("@telefon", Convert.ToString(osoba.Telefon));
-                    //command.Parameters.AddWithValue("@email", osoba.Email);
-                    //command.Parameters.AddWithValue("@idGrad", Convert.ToInt32(osoba.Grad));
-
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Podaci uspesno uneti!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

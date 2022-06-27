@@ -57,6 +57,8 @@ namespace ZubarskaOrdinacija
             this.lbl_InfoGrid = new System.Windows.Forms.Label();
             this.txtBx_pretraga = new System.Windows.Forms.TextBox();
             this.Btn_pretraga2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_ukupno = new System.Windows.Forms.Label();
             this.menuStrip_ordinacija.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
@@ -91,7 +93,7 @@ namespace ZubarskaOrdinacija
             // 
             this.pacijenti_ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pacijenti_ToolStripMenuItem.Image")));
             this.pacijenti_ToolStripMenuItem.Name = "pacijenti_ToolStripMenuItem";
-            this.pacijenti_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacijenti_ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pacijenti_ToolStripMenuItem.Text = "Pacijenti";
             this.pacijenti_ToolStripMenuItem.Click += new System.EventHandler(this.Osobe_TsMenuItem_Click);
             // 
@@ -99,7 +101,7 @@ namespace ZubarskaOrdinacija
             // 
             this.noviPacijent_ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("noviPacijent_ToolStripMenuItem.Image")));
             this.noviPacijent_ToolStripMenuItem.Name = "noviPacijent_ToolStripMenuItem";
-            this.noviPacijent_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviPacijent_ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.noviPacijent_ToolStripMenuItem.Text = "Novi pacijent";
             this.noviPacijent_ToolStripMenuItem.Click += new System.EventHandler(this.Dodavanje_Novog_Pacijenta_MenuItem_Click);
             // 
@@ -116,7 +118,7 @@ namespace ZubarskaOrdinacija
             // 
             this.lekari_ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lekari_ToolStripMenuItem.Image")));
             this.lekari_ToolStripMenuItem.Name = "lekari_ToolStripMenuItem";
-            this.lekari_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lekari_ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.lekari_ToolStripMenuItem.Text = "Lekari";
             this.lekari_ToolStripMenuItem.Click += new System.EventHandler(this.Osobe_TsMenuItem_Click);
             // 
@@ -124,7 +126,7 @@ namespace ZubarskaOrdinacija
             // 
             this.noviLekar_ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("noviLekar_ToolStripMenuItem.Image")));
             this.noviLekar_ToolStripMenuItem.Name = "noviLekar_ToolStripMenuItem";
-            this.noviLekar_ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviLekar_ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.noviLekar_ToolStripMenuItem.Text = "Novi lekar";
             this.noviLekar_ToolStripMenuItem.Click += new System.EventHandler(this.Dodavanje_Novog_Lekara_MenuItem_Click);
             // 
@@ -140,7 +142,7 @@ namespace ZubarskaOrdinacija
             // 
             this.sviPreglediToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sviPreglediToolStripMenuItem.Image")));
             this.sviPreglediToolStripMenuItem.Name = "sviPreglediToolStripMenuItem";
-            this.sviPreglediToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sviPreglediToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.sviPreglediToolStripMenuItem.Text = "Svi pregledi";
             this.sviPreglediToolStripMenuItem.Click += new System.EventHandler(this.SviPregledi_TsMenuItem_Click);
             // 
@@ -157,7 +159,7 @@ namespace ZubarskaOrdinacija
             // 
             this.prikaz_Svih_Zakazivanja_TsMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("prikaz_Svih_Zakazivanja_TsMenuItem.Image")));
             this.prikaz_Svih_Zakazivanja_TsMenuItem.Name = "prikaz_Svih_Zakazivanja_TsMenuItem";
-            this.prikaz_Svih_Zakazivanja_TsMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prikaz_Svih_Zakazivanja_TsMenuItem.Size = new System.Drawing.Size(139, 22);
             this.prikaz_Svih_Zakazivanja_TsMenuItem.Text = "Prikaz svih";
             this.prikaz_Svih_Zakazivanja_TsMenuItem.Click += new System.EventHandler(this.PrikazSvihZakazivanja_TsMenuItem_Click);
             // 
@@ -165,7 +167,7 @@ namespace ZubarskaOrdinacija
             // 
             this.zakazivanje_PregledaTsMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("zakazivanje_PregledaTsMenuItem.Image")));
             this.zakazivanje_PregledaTsMenuItem.Name = "zakazivanje_PregledaTsMenuItem";
-            this.zakazivanje_PregledaTsMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zakazivanje_PregledaTsMenuItem.Size = new System.Drawing.Size(139, 22);
             this.zakazivanje_PregledaTsMenuItem.Text = "Zakazivanje";
             this.zakazivanje_PregledaTsMenuItem.Click += new System.EventHandler(this.Zakazivanje_Novog_Pregleda_TsMenuItem_Click);
             // 
@@ -241,7 +243,7 @@ namespace ZubarskaOrdinacija
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1030, 413);
+            this.dataGridView.Size = new System.Drawing.Size(1030, 399);
             this.dataGridView.TabIndex = 6;
             // 
             // contextMenuStrip
@@ -302,11 +304,33 @@ namespace ZubarskaOrdinacija
             this.Btn_pretraga2.UseVisualStyleBackColor = true;
             this.Btn_pretraga2.Click += new System.EventHandler(this.Btn_pretraga_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(15, 478);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Ukupno: ";
+            // 
+            // lbl_ukupno
+            // 
+            this.lbl_ukupno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_ukupno.AutoSize = true;
+            this.lbl_ukupno.Location = new System.Drawing.Point(88, 478);
+            this.lbl_ukupno.Name = "lbl_ukupno";
+            this.lbl_ukupno.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ukupno.TabIndex = 11;
+            // 
             // OsnovnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 502);
+            this.Controls.Add(this.lbl_ukupno);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_pretraga2);
             this.Controls.Add(this.txtBx_pretraga);
             this.Controls.Add(this.lbl_InfoGrid);
@@ -352,5 +376,7 @@ namespace ZubarskaOrdinacija
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem OsveziToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ObrisiToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_ukupno;
     }
 }
