@@ -43,9 +43,6 @@ namespace ZubarskaOrdinacija
 
         private void Btn_Sacuvaj_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(Convert.ToDateTime(dateTimePicker.Text).ToString()).ToString();
-
-            //DateTime date = dateTimePicker.Value.Date;
             UnosZakazivanje($"INSERT INTO Zakazivanje VALUES ( '{combo_Pacijent.SelectedIndex}', '{combo_Lekar.SelectedIndex}', '{dateTimePicker.Value.Date.ToString("yyyyMMdd")}', '{txtBx_RazlogDolaska.Text}')");
         }
 
