@@ -32,12 +32,14 @@ namespace ZubarskaOrdinacija
         // PRI PODIZANJU FORME POPUNJAVA SE COMBO ZA PACIJENTA I LEKARA
         public void Ucitaj_Combo()
         {
-            combo_Lekar.DataSource = podaciBaza.UcitajPodatke("SELECT Ime FROM Lekari");
-            combo_Lekar.DisplayMember = "Ime";
+            combo_Lekar.DataSource = podaciBaza.UcitajPodatke("SELECT concat(Ime,' ',Prezime) AS ImePrezime ,IDLekar FROM Lekari");
+            combo_Lekar.DisplayMember = "ImePrezime";
+            combo_Lekar.ValueMember = "IDLekar";
             combo_Lekar.Text = null;
 
-            combo_Pacijent.DataSource = podaciBaza.UcitajPodatke("SELECT Ime FROM Pacijenti");
-            combo_Pacijent.DisplayMember = "Ime";
+            combo_Pacijent.DataSource = podaciBaza.UcitajPodatke("SELECT concat(Ime,' ',Prezime) AS Imeprezime,IDPacijent FROM Pacijenti");
+            combo_Pacijent.DisplayMember = "Imeprezime";
+            combo_Pacijent.ValueMember = "IDPacijent";
             combo_Pacijent.Text = null;
         }
 
@@ -48,7 +50,7 @@ namespace ZubarskaOrdinacija
         {
             if (combo_Pacijent.Text != null && combo_Lekar.Text != null && dateTimePicker.Value != null && txtBx_RazlogDolaska.Text != string.Empty)
             {
-                podaciBaza.UnosPodatka($"INSERT INTO Zakazivanje VALUES ( '{combo_Pacijent.SelectedIndex}', '{combo_Lekar.SelectedIndex}', '{dateTimePicker.Value.Date.ToString("yyyyMMdd")}', '{txtBx_RazlogDolaska.Text}')");
+                podaciBaza.UnosPodatka($"INSERT INTO Zakazivanje VALUES ( '{combo_Pacijent.SelectedValue}', '{combo_Lekar.SelectedValue}', '{dateTimePicker.Value.Date.ToString("yyyyMMdd")}', '{txtBx_RazlogDolaska.Text}')");
             }
             else
             {
