@@ -80,11 +80,11 @@ namespace ZubarskaOrdinacija.Model
                 SqlConnection connection = new SqlConnection(CnnString.cnn);
                 try
                 {
-                    connection.Open();
-
                     using (SqlCommand command = new SqlCommand(upitObrisi, connection))
                     {
-                        command.ExecuteScalar();
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
 
                         MessageBox.Show("Uspesno obrisano!", "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

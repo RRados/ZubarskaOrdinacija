@@ -22,9 +22,11 @@ namespace ZubarskaOrdinacija
         public Zakazivanje_pregleda(OsnovnaForma frmOsnovna)
         {
             InitializeComponent();
+
             this.frmOsnovna = frmOsnovna;
             podaciBaza = new PodaciBaza();
             zakazivanje = new Zakazivanje();
+
             Ucitaj_Combo();
         }
 
