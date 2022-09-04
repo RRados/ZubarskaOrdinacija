@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZubarskaOrdinacija.Model;
 
@@ -19,6 +11,8 @@ namespace ZubarskaOrdinacija
         private Osoba osoba;
 
 
+
+
         public DodavanjeNovog(OsnovnaForma frmOsnovna)
         {
             InitializeComponent();
@@ -29,8 +23,12 @@ namespace ZubarskaOrdinacija
             this.frmOsnovna = frmOsnovna;
 
             UcitavanjePodatakaCombo();
+
             CiscenjeKontrola();
         }
+
+
+
 
 
         // AKO JE FORMA this.text IME LEKARA ILI PACIJENTA, POZIVA SE ODGOVARAJUCA METODA ZA UNOS
@@ -48,11 +46,18 @@ namespace ZubarskaOrdinacija
         }
 
 
+
+
+
         //nakon unosa kontrole se prazne
         private void btn_Otkazi_Click(object sender, EventArgs e)
         {
             CiscenjeKontrola();
+
+            this.Close();
         }
+
+
 
 
 
@@ -65,6 +70,8 @@ namespace ZubarskaOrdinacija
             combo_grad.DataSource = podaci.UcitajPodatke("SELECT DISTINCT NazivGrada FROM Gradovi");
             combo_grad.DisplayMember = "NazivGrada";
         }
+
+
 
 
 
@@ -84,9 +91,10 @@ namespace ZubarskaOrdinacija
                 podaci.UnosPodatka($"INSERT INTO Lekari VALUES ('{osoba.Ime}','{osoba.Prezime}','{osoba.Email}','{osoba.Telefon}','{osoba.Grad}')");
             }
 
-
             CiscenjeKontrola();
         }
+
+
 
 
 
@@ -108,6 +116,8 @@ namespace ZubarskaOrdinacija
 
             CiscenjeKontrola();
         }
+
+
 
 
 
