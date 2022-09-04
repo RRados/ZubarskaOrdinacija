@@ -9,6 +9,6 @@ namespace ZubarskaOrdinacija.Model
 {
     class CnnString
     {
-        public static string cnn = "Data Source=DESKTOP-RALE\\RADOS;Initial Catalog=ZubarskaOrdinacija;Integrated Security=True";
+        public static string cnn = "Data Source=DESKTOP\\SQLSERVER;Initial Catalog=ZubarskaOrdinacija;Integrated Security=True";
     }
 }

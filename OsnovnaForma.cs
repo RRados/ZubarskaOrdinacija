@@ -22,8 +22,10 @@ namespace ZubarskaOrdinacija
         public OsnovnaForma()
         {
             InitializeComponent();
+
             podaciBaza = new PodaciBaza();
             zakazivanje = new Zakazivanje_pregleda(this);
+
             UcitajPacijenteZaDanas();
         }
 
@@ -85,7 +87,9 @@ namespace ZubarskaOrdinacija
         {
             PodaciBaza podaciBaza = new PodaciBaza();
 
-            string upitObrisi = "DELETE FROM Pacijenti WHERE IDPacijent=" + dataGridView.CurrentRow.Cells[0].RowIndex;
+            int idPacijtenta = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value);
+
+            string upitObrisi = $"DELETE FROM Pacijenti WHERE IDPacijent='{idPacijtenta}'";
 
             podaciBaza.Obrisi(upitObrisi);
 
@@ -104,7 +108,7 @@ namespace ZubarskaOrdinacija
             if (sender.ToString() == "Pacijenti")
                 lbl_InfoGrid.Text = "Spisak svih pacijenata";
 
-            dataGridView.DataSource = podaciBaza.UcitajPodatke($"select ime, prezime, Email, Telefon, grad.NazivGrada from {sender.ToString()} l inner join Gradovi grad ON grad.IDGrad = l.FK_Grad");
+            dataGridView.DataSource = podaciBaza.UcitajPodatke($"select IDPacijent, ime, prezime, Email, Telefon, grad.NazivGrada from Pacijenti p inner join Gradovi grad ON grad.IDGrad = p.FK_Grad");
 
             lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }
@@ -236,7 +240,7 @@ namespace ZubarskaOrdinacija
         // SPISAK SVIH PACIJENATA
         public void SpisakSvihPacijenata()
         {
-            dataGridView.DataSource = podaciBaza.UcitajPodatke("SELECT l.Ime, l.Prezime, l.Telefon, l.Email, g.NazivGrada FROM Pacijenti l INNER JOIN Gradovi g ON g.IDGrad = l.FK_Grad");
+            dataGridView.DataSource = podaciBaza.UcitajPodatke("SELECT l.IDPacijent, l.Ime, l.Prezime, l.Telefon, l.Email, g.NazivGrada FROM Pacijenti l INNER JOIN Gradovi g ON g.IDGrad = l.FK_Grad");
 
             lbl_ukupno.Text = dataGridView.RowCount.ToString();
         }

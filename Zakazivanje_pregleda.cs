@@ -63,6 +63,8 @@ namespace ZubarskaOrdinacija
             frmOsnovna.Sva_Zakazivanja();
 
             ResetKontrola();
+
+            this.Close();
         }
 
 
@@ -71,6 +73,8 @@ namespace ZubarskaOrdinacija
         private void Btn_Otkazi_Click(object sender, EventArgs e)
         {
             ResetKontrola();
+
+            this.Close();
         }
 
 

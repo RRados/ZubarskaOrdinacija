@@ -29,6 +29,7 @@ namespace ZubarskaOrdinacija
             this.frmOsnovna = frmOsnovna;
 
             UcitavanjePodatakaCombo();
+
             CiscenjeKontrola();
         }
 
@@ -52,6 +53,8 @@ namespace ZubarskaOrdinacija
         private void btn_Otkazi_Click(object sender, EventArgs e)
         {
             CiscenjeKontrola();
+
+            this.Close();
         }
 
 
